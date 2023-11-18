@@ -24,10 +24,12 @@ const addTodo = function() {
   todoList.value.push({id: 9, title: todoTitle.value, detail: todoDetail.value, done: false  })
 }
 
-const todoList = ref([
-  { id:1, title:"Todo1", detail: "TodoTodoTodo1", done: false },
-  { id:2, title:"Todo2", detail: "TodoTodoTodo2", done: false },
-  { id:3, title:"Todo3", detail: "TodoTodoTodo3", done: true },
-  { id:4, title:"Todo4", detail: "TodoTodoTodo4", done: false }
-]);
+const { data: todoList } = await useFetch('http://localhost:8080/todo/get');
+
+// const todoList = ref([
+//   { id:1, title:"Todo1", detail: "TodoTodoTodo1", done: false },
+//   { id:2, title:"Todo2", detail: "TodoTodoTodo2", done: false },
+//   { id:3, title:"Todo3", detail: "TodoTodoTodo3", done: true },
+//   { id:4, title:"Todo4", detail: "TodoTodoTodo4", done: false }
+// ]);
 </script>
